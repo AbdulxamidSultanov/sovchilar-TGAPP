@@ -1,19 +1,18 @@
-import React from 'react'
-import { useTelegram } from "@vkruglikov/react-telegram-web-app";
+import { useEffect } from "react";
 
 function App() {
-  const { WebApp } = useTelegram();
-
     useEffect(() => {
-        WebApp.ready();  // Инициализация WebApp API
-        WebApp.expand(); // Разворачивает WebApp на весь экран
+        const WebApp = window.Telegram.WebApp;
+        WebApp.ready();
+        WebApp.expand();
     }, []);
-  return (
-    <div>
-    <h1>Привет, {WebApp.initDataUnsafe?.user?.first_name || "Гость"}!</h1>
-    <button onClick={() => WebApp.close()}>Закрыть</button>
-</div>
-  )
+
+    return (
+        <div>
+            <h1>Привет, {window.Telegram.WebApp?.initDataUnsafe?.user?.first_name || "Гость"}!</h1>
+            <button onClick={() => window.Telegram.WebApp.close()}>Закрыть</button>
+        </div>
+    );
 }
 
-export default App
+export default App;
