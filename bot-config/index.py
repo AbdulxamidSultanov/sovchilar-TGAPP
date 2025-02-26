@@ -16,5 +16,9 @@ async def start_command(message: types.Message):
 
     await message.answer("Нажмите кнопку ниже, чтобы открыть веб-приложение:", reply_markup=keyboard)
 
+import asyncio
+
 if __name__ == "__main__":
-    executor.start_polling(dp)
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(dp.start_polling())
+
