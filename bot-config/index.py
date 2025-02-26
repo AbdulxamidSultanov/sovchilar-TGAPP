@@ -3,7 +3,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
 
 TOKEN = "8066095257:AAG9W4w2nyg6WKB7zHt1f-CQ8mtQJPis2wM"
-WEB_APP_URL = "https://t.me/sovchilarbot_bot/authorize"  # Ссылка на твою веб-страницу
+WEB_APP_URL = "https://sovchilar-tgapp.vercel.app"  # Ссылка на твою веб-страницу
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
